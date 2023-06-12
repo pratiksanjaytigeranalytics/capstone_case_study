@@ -144,40 +144,23 @@ We need to specify the usecase to validate the environment for core as well as u
 ## Running Production Scripts
 
 ## Then change the directory to production and run the cli script:
-(ta-lib-dev):~/<proj-folder>$ cd production
-(ta-lib-dev):~/<proj-folder>/production>$ python cli.py
+    ```
+    (ta-lib-dev):~/<proj-folder>$ cd production
+    ```
+    ```
+    (ta-lib-dev):~/<proj-folder>/production>$ python cli.py
+    ```
 
 ## Now run the following commands for data cleaning, feature engineering, model training and model scoring respectively:
-
-(ta-lib-dev):~/<proj-folder>/production>$ python cli.py job run --job-id data_cleaning
-
-(ta-lib-dev):~/<proj-folder>/production>$ python cli.py job run --job-id feat_engg
-
-(ta-lib-dev):~/<proj-folder>/production>$ python cli.py job run --job-id model_gen
-
-(ta-lib-dev):~/<proj-folder>/production>$ python cli.py job run --job-id model_eval
-
-
-- The `inv` command has a built-in help facility available for each of the invoke builtins. To use it, type `--help` followed by the command:
     ```
-    (ta-lib-dev):~/<proj-folder>$ inv launch.jupyterlab --help
+    (ta-lib-dev):~/<proj-folder>/production>$ python cli.py job run --job-id data_cleaning
     ```
-- On running the ``help`` command, you get to see the different options supported by it.
-
     ```
-    Usage: inv[oke] [--core-opts] launch.jupyterlab [--options] [other tasks here ...]
-
-    Options:
-    -a STRING, --password=STRING
-    -e STRING, --env=STRING
-    -i STRING, --ip=STRING
-    -o INT, --port=INT
-    -p STRING, --platform=STRING
-    -t STRING, --token=STRING
+    (ta-lib-dev):~/<proj-folder>/production>$ python cli.py job run --job-id feat_engg
     ```
-
-# Frequently Asked Questions
-
-The FAQ for code templates during setting up, testing, development and adoption phases are available
-[here](https://tigeranalytics-code-templates.readthedocs-hosted.com/en/latest/faq.html)
-
+    ```
+    (ta-lib-dev):~/<proj-folder>/production>$ python cli.py job run --job-id model_gen
+    ```
+    ```
+    (ta-lib-dev):~/<proj-folder>/production>$ python cli.py job run --job-id model_eval
+    ```
