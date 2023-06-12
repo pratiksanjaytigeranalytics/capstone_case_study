@@ -135,32 +135,24 @@ We need to specify the usecase to validate the environment for core as well as u
 
 - In order to launch a jupyter notebook locally in the web server, run
 
-    ```
     (ta-lib-dev):~/<proj-folder>$ inv launch.jupyterlab
-    ```
+
      After running the command, type [localhost:8080](localhost:8080) to see the launched JupyterLab.
 
 
 ## Running Production Scripts
 
 ## Then change the directory to production and run the cli script:
-    ```
+
     (ta-lib-dev):~/<proj-folder>$ cd production
-    ```
-    ```
+
     (ta-lib-dev):~/<proj-folder>/production>$ python cli.py
-    ```
 
 ## Now run the following commands for data cleaning, feature engineering, model training and model scoring respectively:
-    ```
     (ta-lib-dev):~/<proj-folder>/production>$ python cli.py job run --job-id data_cleaning
-    ```
-    ```
+
     (ta-lib-dev):~/<proj-folder>/production>$ python cli.py job run --job-id feat_engg
-    ```
-    ```
+
     (ta-lib-dev):~/<proj-folder>/production>$ python cli.py job run --job-id model_gen
-    ```
-    ```
+
     (ta-lib-dev):~/<proj-folder>/production>$ python cli.py job run --job-id model_eval
-    ```
