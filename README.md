@@ -162,3 +162,17 @@ We need to specify the usecase to validate the environment for core as well as u
 
 The FAQ for code templates during setting up, testing, development and adoption phases are available
 [here](https://tigeranalytics-code-templates.readthedocs-hosted.com/en/latest/faq.html)
+
+# Running Production Scripts
+
+# Then chnage the directory to production and run the cli script:
+(ta-lib-dev):~/<proj-folder>$ cd production
+(ta-lib-dev):~/<proj-folder>/production>$ python cli.py
+
+# Now run the following commands for data cleaning, feature engineering, model training and model scoring respectively:
+
+(ta-lib-dev):~/<proj-folder>/production>$ python cli.py job run --job-id data_cleaning
+(ta-lib-dev):~/<proj-folder>/production>$ python cli.py job run --job-id feat_engg
+(ta-lib-dev):~/<proj-folder>/production>$ python cli.py job run --job-id model_gen
+(ta-lib-dev):~/<proj-folder>/production>$ python cli.py job run --job-id model_eval
+
