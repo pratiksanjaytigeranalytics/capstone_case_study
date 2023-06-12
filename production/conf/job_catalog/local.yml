@@ -1,0 +1,58 @@
+jobs:
+  - name: data-cleaning
+    stages:
+      - name: "clean-base-tables"
+        tasks:
+          - name: "social-media-data"
+            params: {}
+          - name: "sales-data"
+            params: {}
+          - name: "google-search-data"
+            params: {}
+          - name: "product-manufacturer-list"
+            params: {}
+          - name: "Theme-Product-list"
+            params: {}
+          - name: "Theme-list"
+            params: {}
+          - name: "sales-data-processed"
+            params: {}
+          - name: "social-media-processed"
+            params: {}
+          - name: "google-search-data-processed"
+            params: {}
+          - name: "sales-social-google"
+            params: {}
+
+      - name: "train-test-split"
+        tasks:
+          - name: "train-test"
+            params:
+              target: Client_A_sales_units_value
+              test_size: 0.1
+
+  - name: feat-engg
+    stages:
+      - name: "feature-pipelines"
+        tasks:
+          - name: "transform-features"
+            params:
+              outliers:
+                method: mean
+                drop: False
+              sampling_fraction: 0.1
+
+  - name: model-gen
+    stages:
+      - name: "model-creation"
+        tasks:
+          - name: "train-model"
+            params:
+              sampling_fraction: 0.1
+
+  - name: model-eval
+    stages:
+      - name: "model-predict"
+        tasks:
+          - name: "score-model"
+            params: {}
